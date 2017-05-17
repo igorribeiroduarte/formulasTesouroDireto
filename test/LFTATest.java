@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import src.LFTA;
+
 public class LFTATest {
 	LFTA lfta1;
 	
@@ -34,7 +36,7 @@ public class LFTATest {
 		lfta1.calculateResultingFactor(3);
 		Assert.assertTrue(Math.abs(lfta1.getResultingFactor() - 1.00869541) < 1e-8);
 		
-		lfta1.setRateOfIncrase(0.0245);
+		lfta1.setRatingOfIncrease(0.0245);
 		lfta1.setNumberOfWorkingDaysUntilWantedDate(5);
 		lfta1.setNumberOfWorkingDaysUntilPayDay(6);
 		lfta1.setNumberOfInstallments(30);
