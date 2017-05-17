@@ -6,12 +6,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import src.LFT;
+
 public class LFTTest {
 	LFT lft1;
 	
 	@Before
 	public void setUp() throws Exception {
 		lft1 = new LFT();
+		lft1.setSelicRate(new ArrayList<>());
 	}
 	
 	@Test
@@ -30,7 +33,7 @@ public class LFTTest {
 		Assert.assertTrue(Math.abs(selicRate.get(1) - 0.00294853) < 1e-8);
 		Assert.assertTrue(Math.abs(selicRate.get(2) - 0.00296744) < 1e-8);
 
-		lft1.calculateResultingFactor();
+		lft1.calculateResultingFactor(3);
 		Assert.assertTrue(Math.abs(lft1.getResultingFactor() - 1.00869541) < 1e-8);
 		
 		lft1.calculateUpdatedNominalValue();

@@ -32,12 +32,15 @@ public class BTN {
 	public double getUnitPriceBefore() {
 		return unitPriceBefore;
 	}
+	
 	public void setUnitPriceBefore(double unitPriceBefore) {
 		this.unitPriceBefore = unitPriceBefore;
 	}
+	
 	public double getReferencialRate() {
 		return referencialRate;
 	}
+	
 	public void setReferencialRate(double referencialRate) {
 		this.referencialRate = referencialRate;
 	}
