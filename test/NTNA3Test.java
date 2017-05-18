@@ -26,11 +26,11 @@ public class NTNA3Test {
 	
 	@Test
 	public void testFactor(){
-		ntna3.setInterestRate(0.16);
+		ntna3.setInterestRate(0.15);
 		ntna3.setMonthsNumber(2);
 		
 		ntna3.calculateFactor();
 		
-		Assert.assertTrue(Math.abs(ntna3.getFactor() - 0.16666) < 1e-6);
+		Assert.assertTrue(Math.abs(ntna3.getFactor() - 0.00025) < 1e-6);
 	}
 }
