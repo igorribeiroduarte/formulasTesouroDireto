@@ -17,6 +17,8 @@ public class NTNA1Test {
 		ntna1.setEmissionValue(100.15);	
 		ntna1.setDepreciationPercent(0.15);
 		
+		ntna1.calculateTitileLiquidValue();
+		
 		Assert.assertTrue(Math.abs(ntna1.getTitleLiquidValue() - 15.015) < 1e-6);
 	}
 }
