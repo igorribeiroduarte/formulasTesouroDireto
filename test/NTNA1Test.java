@@ -23,4 +23,15 @@ public class NTNA1Test {
 		
 		Assert.assertTrue(Math.abs(ntna1.getTitleLiquidValue() - 15.0225) < 1e-6);
 	}
+	
+	@Test
+	public void testUnitPrice(){
+		ntna1.setUpdateQuotation(3.15);
+		ntna1.setBaseQuotation(3.10);
+		ntna1.setTitleLiquidValue(1000);
+		
+		ntna1.calculateUnitPrice();
+		
+		Assert.assertTrue(Math.abs(ntna1.getUnitPrice() - 15.0225) < 1e-6);
+	}
 }
