@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import src.NTNA1;
+import src.NTNA3;
 
 public class NTNA3Test {
 	NTNA3 ntna3;
@@ -22,5 +22,15 @@ public class NTNA3Test {
 		ntna3.calculateNominalValue();
 		
 		Assert.assertTrue(Math.abs(ntna3.getNominalValue() - 1500) < 1e-6);
+	}
+	
+	@Test
+	public void testFactor(){
+		ntna3.setInterestRate(0.16);
+		ntna3.setMonthsNumber(2);
+		
+		ntna3.calculateFactor();
+		
+		Assert.assertTrue(Math.abs(ntna3.getFactor() - 0.16666) < 1e-6);
 	}
 }
