@@ -32,6 +32,6 @@ public class NTNA1Test {
 		
 		ntna1.calculateUnitPrice();
 		
-		Assert.assertTrue(Math.abs(ntna1.getUnitPrice() - 15.0225) < 1e-6);
+		Assert.assertTrue(Math.abs(ntna1.getUnitPrice() - 1016.129032) < 1e-6);
 	}
 }
