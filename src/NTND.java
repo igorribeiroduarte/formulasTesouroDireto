@@ -7,9 +7,22 @@ public class NTND {
 	private double interestRate;
 	private int monthsNumber;
 	private double factor; 
+	private double interest;
 	
 	public NTND(){ }
 	
+	public void calculateInterest(){
+		this.interest = this.nominalValue * this.factor;
+	}
+	
+	public double getInterest() {
+		return interest;
+	}
+
+	public void setInterest(double interest) {
+		this.interest = interest;
+	}
+		
 	public double getInterestRate() {
 		return interestRate;
 	}
