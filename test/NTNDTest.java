@@ -23,4 +23,15 @@ public class NTNDTest {
 		
 		Assert.assertTrue(Math.abs(ntnd.getNominalValue() - 1500) < 1e-6);
 	}
+	
+	@Test
+	public void testFactor(){
+		ntnd.setInterestRate(0.15);
+		ntnd.setMonthsNumber(2);
+		
+		ntnd.calculateFactor();
+		
+		Assert.assertTrue(Math.abs(ntnd.getFactor() - 0.00025) < 1e-8);
+	}
+	
 }
