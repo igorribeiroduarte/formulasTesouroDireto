@@ -1,5 +1,7 @@
 package test;
 
+import java.util.ArrayList;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,5 +35,17 @@ public class NTNA1Test {
 		ntna1.calculateUnitPrice();
 		
 		Assert.assertTrue(Math.abs(ntna1.getUnitPrice() - 1016.129032) < 1e-6);
+	}
+	
+	public void testFactor(){
+		ntna1.setCurrentPaymentDateInDays();
+		ntna1.setLastPaymentDateInDays();
+		
+		ArrayList<Double> interestFactors = new ArrayList<>();
+		interestFactors.add(1.1234678);
+		interestFactors.add(2.1234678);	
+		ntna1.setFactor();	
+		
+		Assert.assertTrue(Math.abs(ntna1.getFactor() - 1016.129032) < 1e-6);
 	}
 }
