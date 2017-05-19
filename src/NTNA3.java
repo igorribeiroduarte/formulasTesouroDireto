@@ -7,8 +7,21 @@ public class NTNA3 {
 	private double interestRate;
 	private int monthsNumber;
 	private double factor; 
-	
+	private double interest;
+
 	public NTNA3(){ }
+	
+	public void calculateInterest(){
+		this.interest = this.nominalValue * this.factor;
+	}
+	
+	public double getInterest() {
+		return interest;
+	}
+
+	public void setInterest(double interest) {
+		this.interest = interest;
+	}
 	
 	public double getNominalValue() {
 		return nominalValue;
