@@ -39,6 +39,8 @@ public class NTNA3Test {
 		ntna3.setNominalValue(1500.75);
 		ntna3.setFactor(2.12345678);
 		
-		Assert.assertTrue(Math.abs(ntna3.getInterest() - 0.00025) < 1e-8);
+		ntna3.calculateInterest();
+		
+		Assert.assertTrue(Math.abs(ntna3.getInterest() - 3186.777762585) < 1e-8);
 	}
 }
