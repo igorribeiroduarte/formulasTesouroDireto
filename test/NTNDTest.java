@@ -34,4 +34,13 @@ public class NTNDTest {
 		Assert.assertTrue(Math.abs(ntnd.getFactor() - 0.00025) < 1e-8);
 	}
 	
+	@Test
+	public void testInterest(){
+		ntnd.setNominalValue(1500.75);
+		ntnd.setFactor(2.12345678);
+		
+		ntnd.calculateInterest();
+		
+		Assert.assertTrue(Math.abs(ntnd.getInterest() - 3186.777762585) < 1e-8);
+	}
 }
