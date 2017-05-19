@@ -6,9 +6,31 @@ public class NTNB {
 	private double IPCA1;
 	private double IPCA0;
 	private double factor;
+	private double emissionNominalValue;
+	private double updatedNominalValue;
 	
 	public void calculateFactor(){
 		this.factor = Math.pow( (this.IPCA1 / this.IPCA0), (this.Dc * 1.0 / this.Dct * 1.0) );
+	}
+	
+	public void calculateUpdatedNominalValue(){
+		this.updatedNominalValue = this.factor * (this.IPCA1 / this.IPCA0) * this.emissionNominalValue;
+	}
+	
+	public double getEmissionNominalValue() {
+		return emissionNominalValue;
+	}
+
+	public void setEmissionNominalValue(double emissionNominalValue) {
+		this.emissionNominalValue = emissionNominalValue;
+	}
+
+	public double getUpdatedNominalValue() {
+		return updatedNominalValue;
+	}
+
+	public void setUpdatedNominalValue(double updatedNominalValue) {
+		this.updatedNominalValue = updatedNominalValue;
 	}
 	
 	public int getDc() {
