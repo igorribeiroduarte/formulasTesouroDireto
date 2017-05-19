@@ -50,9 +50,9 @@ public class NTNA6Test {
 		ntna6.setLastPayDate(lastPayDate);
 		
 		ntna6.calculateFactor();
-		Assert.assertTrue(Math.abs(ntna6.getFactor() - 0.16458333) < 1e-6);
+		Assert.assertTrue(Math.abs(ntna6.getFactor() - 0.01294306) < 1e-8);
 		
 		ntna6.calculateInterest();
-		Assert.AssertTrue(Math.abs(ntna6.getInterest() - 0.027087) < 1e-6);
+		Assert.assertTrue(Math.abs(ntna6.getInterest() - 0.142428) < 1e-6);
 	}
 }
