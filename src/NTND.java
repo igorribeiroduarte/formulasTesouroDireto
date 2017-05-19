@@ -4,8 +4,39 @@ public class NTND {
 	private double nominalValue;
 	private double updateQuotation;
 	private double baseQuotation;
+	private double interestRate;
+	private int monthsNumber;
+	private double factor; 
 	
 	public NTND(){ }
+	
+	public double getInterestRate() {
+		return interestRate;
+	}
+
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
+	}
+
+	public int getMonthsNumber() {
+		return monthsNumber;
+	}
+
+	public void setMonthsNumber(int monthsNumber) {
+		this.monthsNumber = monthsNumber;
+	}
+
+	public double getFactor() {
+		return factor;
+	}
+
+	public void setFactor(double factor) {
+		this.factor = factor;
+	}
+	
+	public void calculateFactor(){
+		this.factor = (this.interestRate / 100.0) * (this.monthsNumber / 12.0);
+	}
 	
 	public double getNominalValue() {
 		return nominalValue;
