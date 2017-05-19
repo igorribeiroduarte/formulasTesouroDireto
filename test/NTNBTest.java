@@ -25,4 +25,16 @@ public class NTNBTest {
 		
 		Assert.assertTrue(Math.abs(ntnb.getFactor() - 1.01309320) < 1e-8);
 	}
+	
+	@Test
+	public void testUpdatedNominalValue() {
+		ntnb.setIPCA1(5);
+		ntnb.setIPCA0(4.75);
+		ntnb.setFactor(1.12345678);
+		ntnb.setEmissionNominalValue(1000);
+		
+		ntnb.calculateUpdatedNominalValue();
+		
+		Assert.assertTrue(Math.abs(ntnb.getUpdatedNominalValue() - 1185.586084) < 1e-6);
+	}
 }
