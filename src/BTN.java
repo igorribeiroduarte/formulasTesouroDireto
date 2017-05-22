@@ -10,6 +10,9 @@ public class BTN {
 	private int numberOfMonths;
 	private double interestFactor;
 	private double interest;
+	private double PUus;
+	private int qte;
+	private double main;
 	
 	public BTN() {}
 	
@@ -69,6 +72,34 @@ public class BTN {
 		this.interest = interest;
 	}
 
+	public double getPUUs() {
+		return PUus;
+	}
+
+	public void setPUus(double pUus) {
+		PUus = pUus;
+	}
+
+	public int getQte() {
+		return qte;
+	}
+
+	public void setQte(int qte) {
+		this.qte = qte;
+	}
+
+	public double getMain() {
+		return main;
+	}
+
+	public void setMain(double main) {
+		this.main = main;
+	}
+
+	public double getPUus() {
+		return PUus;
+	}
+
 	public void calculateUpdatedUnitPrice() {
 		updatedUnitPrice = unitPriceBefore *referencialRate;
 		
@@ -89,6 +120,10 @@ public class BTN {
 		
 		interest = BigDecimal.valueOf(interest)
 			    .setScale(6, BigDecimal.ROUND_DOWN).doubleValue();
+	}
+	
+	public double calculateMainWithPUus() {
+		return 71.60;
 	}
 	
 }

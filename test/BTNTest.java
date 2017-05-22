@@ -43,6 +43,6 @@ public class BTNTest {
 		btn1.setQte(20);
 		
 		btn1.calculateMainWithPUus();
-		Assert.assertTrue(Math.abs(btn1.getMain() - 71,60) < 1e-2);
+		Assert.assertTrue(Math.abs(btn1.getMain() - 71.60) < 1e-2);
 	}
 }
