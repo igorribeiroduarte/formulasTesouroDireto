@@ -47,11 +47,29 @@ public class BTNTest {
 	}
 	
 	@Test
-	public void testMainWithPUusAndQteEqualsZero() {
+	public void testMainWithPUusWhenQteEqualsZero() {
 		btn1.setPUus(5.15);
 		btn1.setQte(0);
 		
 		btn1.calculateMainWithPUus();
 		Assert.assertTrue(Math.abs(btn1.getMain() - 0) < 1e-2);
+	}
+	
+	@Test
+	public void testMainWithPUusWhenPUusEqualsZero() {
+		btn1.setPUus(0.00);
+		btn1.setQte(15);
+		
+		btn1.calculateMainWithPUus();
+		Assert.assertTrue(Math.abs(btn1.getMain() - 0) < 1e-2);
+	}
+	
+	@Test
+	public void testMainWithPUat() {
+		btn1.setPUat(7.32);
+		btn1.setQte(30);
+		
+		btn1.calculateMainWithPUat();
+		Assert.assertTrue(Math.abs(btn1.getMain() - 219.60) < 1e-2);
 	}
 }
