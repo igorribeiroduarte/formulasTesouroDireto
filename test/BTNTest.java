@@ -36,4 +36,13 @@ public class BTNTest {
         Assert.assertTrue(Math.abs(btn1.getInterestFactor() - 0.02795914) < 1e-8);
         Assert.assertTrue(Math.abs(btn1.getInterest() - 0.842225) < 1e-6);
     }
+	
+	@Test
+	public void testMainWithPUus() {
+		btn1.setPUus(3.58);
+		btn1.setQte(20);
+		
+		btn1.calculateMainWithPUus();
+		Assert.assertTrue(Math.abs(btn1.getMain() - 71,60) < 1e-2);
+	}
 }
