@@ -51,7 +51,7 @@ public class NTNA1Test {
 		ArrayList<Double> interestFactors = new ArrayList<>();
 		interestFactors.add(0.3);
 		interestFactors.add(2.12345678);	
-		ntna1.setFactor(interestFactors);
+		ntna1.setInterestFactor(interestFactors);
 		
 		Assert.assertTrue(Math.abs(ntna1.getFactor() - 0.00201954) < 1e-8);
 	}
@@ -67,7 +67,7 @@ public class NTNA1Test {
 		
 		ArrayList<Double> interestFactors = new ArrayList<>();
 		interestFactors.add(0.7);	
-		ntna1.setFactor(interestFactors);
+		ntna1.setInterestFactor(interestFactors);
 		
 		Assert.assertTrue(Math.abs(ntna1.getFactor() - 0.000875) < 1e-8);
 	}
