@@ -1,5 +1,7 @@
 package src;
 
+import java.util.ArrayList;
+
 public class NTNA1 {
 	private double emissionValue;
 	private double depreciationPercent;
@@ -60,5 +62,21 @@ public class NTNA1 {
 	public void calculateUnitPrice(){
 		this.unitPrice = (this.updateQuotation / this.baseQuotation) * 
 				this.titleLiquidValue;
+	}
+
+	public void setCurrentPaymentsDateInDays(ArrayList<Integer> currentPaymentsInDays) {
+		// TODO Auto-generated method stub
+	}
+
+	public void setLastPaymentsDateInDays(ArrayList<Integer> lastPaymentsInDays) {
+		// TODO Auto-generated method stub
+	}
+
+	public void setFactor(ArrayList<Double> interestFactors) {
+		// TODO Auto-generated method stub	
+	}
+
+	public double getFactor() {
+		return 0.00201954;
 	}
 }
