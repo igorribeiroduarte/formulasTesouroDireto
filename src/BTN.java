@@ -123,7 +123,10 @@ public class BTN {
 	}
 	
 	public void calculateMainWithPUus() {
-		main = 71.60;
+		main = PUus * qte;
+		
+		main = BigDecimal.valueOf(main)
+			    .setScale(6, BigDecimal.ROUND_HALF_UP).doubleValue();
 	}
 	
 }
