@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import src.LFTB;
 
-class LFTBTest {
+public class LFTBTest {
 	LFTB lftb1;
 	
 	@Before

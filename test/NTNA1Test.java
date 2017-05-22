@@ -38,14 +38,21 @@ public class NTNA1Test {
 	}
 	
 	public void testFactor(){
-		ntna1.setCurrentPaymentDateInDays();
-		ntna1.setLastPaymentDateInDays();
+		ArrayList<Integer> currentPaymentsInDays = new ArrayList<>();
+		currentPaymentsInDays.add(736373);
+		currentPaymentsInDays.add(736433);
+		ntna1.setCurrentPaymentsDateInDays(currentPaymentsInDays);
+		
+		ArrayList<Integer> lastPaymentsInDays = new ArrayList<>();
+		lastPaymentsInDays.add(736343);
+		lastPaymentsInDays.add(736403);
+		ntna1.setLastPaymentsDateInDays(lastPaymentsInDays);
 		
 		ArrayList<Double> interestFactors = new ArrayList<>();
-		interestFactors.add(1.1234678);
-		interestFactors.add(2.1234678);	
-		ntna1.setFactor();	
+		interestFactors.add(0.3);
+		interestFactors.add(2.12345678);	
+		ntna1.setFactor(interestFactors);
 		
-		Assert.assertTrue(Math.abs(ntna1.getFactor() - 1016.129032) < 1e-6);
+		Assert.assertTrue(Math.abs(ntna1.getFactor() - 0.00201954) < 1e-8);
 	}
 }
