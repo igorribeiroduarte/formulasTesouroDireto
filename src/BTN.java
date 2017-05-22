@@ -122,8 +122,8 @@ public class BTN {
 			    .setScale(6, BigDecimal.ROUND_DOWN).doubleValue();
 	}
 	
-	public double calculateMainWithPUus() {
-		return 71.60;
+	public void calculateMainWithPUus() {
+		main = 71.60;
 	}
 	
 }

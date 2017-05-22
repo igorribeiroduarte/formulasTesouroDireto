@@ -45,4 +45,13 @@ public class BTNTest {
 		btn1.calculateMainWithPUus();
 		Assert.assertTrue(Math.abs(btn1.getMain() - 71.60) < 1e-2);
 	}
+	
+	@Test
+	public void testMainWithPUusAndQteEqualsZero() {
+		btn1.setPUus(5.15);
+		btn1.setQte(0);
+		
+		btn1.calculateMainWithPUus();
+		Assert.assertTrue(Math.abs(btn1.getMain() - 0) < 1e-2);
+	}
 }
