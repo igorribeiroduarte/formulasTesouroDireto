@@ -37,6 +37,7 @@ public class NTNA1Test {
 		Assert.assertTrue(Math.abs(ntna1.getUnitPrice() - 1016.129032) < 1e-6);
 	}
 	
+	@Test
 	public void testFactorWithManyValues(){
 		ArrayList<Integer> currentPaymentsInDays = new ArrayList<>();
 		currentPaymentsInDays.add(736373);
@@ -56,6 +57,7 @@ public class NTNA1Test {
 		Assert.assertTrue(Math.abs(ntna1.getFactor() - 0.00201954) < 1e-8);
 	}
 	
+	@Test
 	public void testFactorWithOneValue(){
 		ArrayList<Integer> currentPaymentsInDays = new ArrayList<>();
 		currentPaymentsInDays.add(736418);

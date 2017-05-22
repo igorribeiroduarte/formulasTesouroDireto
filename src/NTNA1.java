@@ -9,6 +9,10 @@ public class NTNA1 {
 	private double updateQuotation;
 	private double baseQuotation;
 	private double unitPrice;
+	private ArrayList<Integer> currentPaymentsInDays;
+	private ArrayList<Integer> lastPaymentsInDays;
+	private ArrayList<Double> interestFactors;
+	private double factor;
 
 	public NTNA1(){ }
 	
@@ -64,19 +68,42 @@ public class NTNA1 {
 				this.titleLiquidValue;
 	}
 
+	public ArrayList<Integer> getCurrentPaymentsInDays() {
+		return currentPaymentsInDays;
+	}
+
 	public void setCurrentPaymentsDateInDays(ArrayList<Integer> currentPaymentsInDays) {
-		// TODO Auto-generated method stub
+		this.currentPaymentsInDays = currentPaymentsInDays;
+	}
+
+	public ArrayList<Integer> getLastPaymentsInDays() {
+		return lastPaymentsInDays;
 	}
 
 	public void setLastPaymentsDateInDays(ArrayList<Integer> lastPaymentsInDays) {
-		// TODO Auto-generated method stub
+		this.lastPaymentsInDays = lastPaymentsInDays;
 	}
 
-	public void setFactor(ArrayList<Double> interestFactors) {
-		// TODO Auto-generated method stub	
+	public ArrayList<Double> getInterestFactors() {
+		return interestFactors;
+	}
+
+	public void setInterestFactor(ArrayList<Double> interestFactors) {
+		this.interestFactors = interestFactors;
+	}
+	
+	public void setFactor(double factor){
+		this.factor = factor;
 	}
 
 	public double getFactor() {
-		return 0.00201954;
+		this.factor = 0;
+		
+		for(int i=0; i<interestFactors.size(); i++){
+			this.factor += ((currentPaymentsInDays.get(i) - lastPaymentsInDays.get(i)) / 360.0) *
+					(interestFactors.get(i) / 100.0);
+		}
+		
+		return this.factor;
 	}
 }
