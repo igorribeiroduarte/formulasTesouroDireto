@@ -37,7 +37,7 @@ public class NTNA1Test {
 		Assert.assertTrue(Math.abs(ntna1.getUnitPrice() - 1016.129032) < 1e-6);
 	}
 	
-	public void testFactor(){
+	public void testFactorWithManyValues(){
 		ArrayList<Integer> currentPaymentsInDays = new ArrayList<>();
 		currentPaymentsInDays.add(736373);
 		currentPaymentsInDays.add(736433);
@@ -54,5 +54,21 @@ public class NTNA1Test {
 		ntna1.setFactor(interestFactors);
 		
 		Assert.assertTrue(Math.abs(ntna1.getFactor() - 0.00201954) < 1e-8);
+	}
+	
+	public void testFactorWithOneValue(){
+		ArrayList<Integer> currentPaymentsInDays = new ArrayList<>();
+		currentPaymentsInDays.add(736418);
+		ntna1.setCurrentPaymentsDateInDays(currentPaymentsInDays);
+		
+		ArrayList<Integer> lastPaymentsInDays = new ArrayList<>();
+		lastPaymentsInDays.add(736373);
+		ntna1.setLastPaymentsDateInDays(lastPaymentsInDays);
+		
+		ArrayList<Double> interestFactors = new ArrayList<>();
+		interestFactors.add(0.7);	
+		ntna1.setFactor(interestFactors);
+		
+		Assert.assertTrue(Math.abs(ntna1.getFactor() - 0.000875) < 1e-8);
 	}
 }
