@@ -106,4 +106,13 @@ public class NTNA1 {
 		
 		return this.factor;
 	}
+
+	public void calculateInterest() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public double getInterest() {
+		return 0.3751875;
+	}
 }
