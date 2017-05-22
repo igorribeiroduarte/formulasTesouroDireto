@@ -11,6 +11,7 @@ public class BTN {
 	private double interestFactor;
 	private double interest;
 	private double PUus;
+	private double PUat;
 	private int qte;
 	private double main;
 	
@@ -80,6 +81,14 @@ public class BTN {
 		PUus = pUus;
 	}
 
+	public double getPUat() {
+		return PUat;
+	}
+
+	public void setPUat(double pUat) {
+		PUat = pUat;
+	}
+
 	public int getQte() {
 		return qte;
 	}
@@ -124,6 +133,13 @@ public class BTN {
 	
 	public void calculateMainWithPUus() {
 		main = PUus * qte;
+		
+		main = BigDecimal.valueOf(main)
+			    .setScale(6, BigDecimal.ROUND_HALF_UP).doubleValue();
+	}
+	
+	public void calculateMainWithPUat() {
+		main = PUat * qte;
 		
 		main = BigDecimal.valueOf(main)
 			    .setScale(6, BigDecimal.ROUND_HALF_UP).doubleValue();
