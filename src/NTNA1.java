@@ -13,6 +13,7 @@ public class NTNA1 {
 	private ArrayList<Integer> lastPaymentsInDays;
 	private ArrayList<Double> interestFactors;
 	private double factor;
+	private double interest;
 
 	public NTNA1(){ }
 	
@@ -108,11 +109,14 @@ public class NTNA1 {
 	}
 
 	public void calculateInterest() {
-		// TODO Auto-generated method stub
-		
+		this.interest = this.unitPrice *  this.factor;
+	}
+	
+	public double setInterest() {
+		return this.interest;
 	}
 
 	public double getInterest() {
-		return 0.3751875;
+		return this.interest;
 	}
 }
