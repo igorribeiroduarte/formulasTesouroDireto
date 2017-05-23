@@ -91,6 +91,6 @@ public class NTNB {
 
 	public double getInterestFactor() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 1.00311058;
 	}
 }
