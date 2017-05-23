@@ -8,6 +8,11 @@ public class NTNB {
 	private double factor;
 	private double emissionNominalValue;
 	private double updatedNominalValue;
+	private int dcp;
+	private int monthsNumber;
+	private double nextPaymentDateInDays;
+	private double interestRate;
+	private double interestFactor;
 	
 	public void calculateFactor(){
 		this.factor = Math.pow( (this.IPCA1 / this.IPCA0), (this.Dc * 1.0 / this.Dct * 1.0) );
@@ -63,34 +68,30 @@ public class NTNB {
 	public void setFactor(double factor) {
 		this.factor = factor;
 	}
-
-	public void setMonthsNumber(int i) {
-		// TODO Auto-generated method stub
-		
+	
+	public void setMonthsNumber(int monthsNumber) {
+		this.monthsNumber = monthsNumber;
 	}
 
-	public void setDcp(int i) {
-		// TODO Auto-generated method stub
-		
+	public void setDcp(int dcp) {
+		this.dcp = dcp;
 	}
 
-	public void setNextPaymentDateInDays(int i) {
-		// TODO Auto-generated method stub
-		
+	public void setNextPaymentDateInDays(int nextPaymentDateInDays) {
+		this.nextPaymentDateInDays = nextPaymentDateInDays;
 	}
 
-	public void setInterestRate(double d) {
-		// TODO Auto-generated method stub
-		
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
 	}
 
 	public void calculateInterestFactor() {
-		// TODO Auto-generated method stub
-		
+		double exponent = this.dcp / this.nextPaymentDateInDays;
+		this.interestFactor = Math.pow(Math.pow((this.interestRate / 100.0) + 1, this.monthsNumber / 12.0 ),
+				exponent);
 	}
 
 	public double getInterestFactor() {
-		// TODO Auto-generated method stub
-		return 1.00311058;
+		return this.interestFactor;
 	}
 }
