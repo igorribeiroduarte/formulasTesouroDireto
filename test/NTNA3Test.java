@@ -41,6 +41,6 @@ public class NTNA3Test {
 		
 		ntna3.calculateInterest();
 		
-		Assert.assertTrue(Math.abs(ntna3.getInterest() - 3186.777762585) < 1e-8);
+		Assert.assertTrue(Math.abs(ntna3.getInterest() - 3186.777762585) < 1e-6);
 	}
 }
