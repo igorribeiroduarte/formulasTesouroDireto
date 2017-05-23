@@ -83,4 +83,14 @@ public class NTNA1Test {
 		
 		Assert.assertTrue(Math.abs(ntna1.getInterest() - 0.3751875) < 1e-8);
 	}
+	
+	@Test
+	public void testInterest2(){
+		ntna1.setUnitPrice(52748.10);
+		ntna1.setFactor(0.325);
+		
+		ntna1.calculateInterest();
+		
+		Assert.assertTrue(Math.abs(ntna1.getInterest() - 17143.1325) < 1e-8);
+	}
 }
