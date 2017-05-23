@@ -49,4 +49,16 @@ public class NTNBTest {
 		
 		Assert.assertTrue(Math.abs(ntnb.getInterestFactor() - 1.00311058) < 1e-8);
 	}
+	
+	@Test
+	public void testInterestFactor2(){
+		ntnb.setMonthsNumber(12);
+		ntnb.setDcp(736125);
+		ntnb.setNextPaymentDateInDays(736250);
+		ntnb.setInterestRate(1);
+		
+		ntnb.calculateInterestFactor();
+		
+		Assert.assertTrue(Math.abs(ntnb.getInterestFactor() - 1.00999829) < 1e-8);
+	}
 }
