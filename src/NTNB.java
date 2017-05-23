@@ -63,4 +63,34 @@ public class NTNB {
 	public void setFactor(double factor) {
 		this.factor = factor;
 	}
+
+	public void setMonthsNumber(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setDcp(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setNextPaymentDateInDays(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setInterestRate(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void calculateInterestFactor() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public double getInterestFactor() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
